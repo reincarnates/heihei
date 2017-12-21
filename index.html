@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.zanting{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 100px;
+		}
+		.huifu{
+			width: 100px;
+			height: 100px;
+			background: aqua;
+			margin-top: 20px;
+		}
+		.jieshu{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div class="zanting">暂停</div>
+	<div class="huifu">恢复</div>
+	<div class="jieshu">结束</div>
+		
+		<script type="text/javascript">
+            var k = 20;
+            var timer = setInterval(function(){
+                if(k== -1){
+                    clearInterval(timer);
+                }else{
+                    box.innerHTML = '00 : '+'00 :'+k;
+                    --k;
+                }
+            },1000);
+ 
+        	var zanting = document.querySelector('.zanting');
+			var huifu = document.querySelector('.huifu');
+			var jieshu = document.querySelector('.jieshu');
+			zanting.onclick = function(){
+				clearInterval(timer);
+			}
+			huifu.onclick = function(){
+				timer = setInterval(function(){
+                if(k== -1){
+                    clearInterval(timer);
+                }else{
+                    box.innerHTML = '00 : '+'00 :'+k;
+                    --k;
+                }
+            },1000);
+			}
+			jieshu.onclick = function(){
+				clearInterval(timer);
+			}
+    </script>
+</body>
+<html>
